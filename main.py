@@ -6,8 +6,10 @@ import os
 directory = os.getcwd()
 
 def openFile():
-    global file_location
+    global directory 
     directory = filedialog.askdirectory()
+    if(directory == () or directory == ""):
+        directory = os.getcwd()
     file_dir_display.configure(text=directory)
 
 def checkForEmpty():
